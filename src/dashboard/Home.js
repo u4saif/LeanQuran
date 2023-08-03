@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div class="grid-container">
+    <div className="grid-container">
       <div className="chaptersContainer">
         <span className="heading">Surahs</span>
         {AllChapters.map((chapter) => {

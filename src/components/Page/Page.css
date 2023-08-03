@@ -1,3 +1,8 @@
-h2 {
-  direction: rtl;
+.allLineContainer {
+  padding-right: 0.5rem;
+  /* border-right: 0.1rem solid darkgreen;
+  border-left: 0.1rem solid darkgreen; */
+  box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
+  -moz-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
+  -webkit-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
 }

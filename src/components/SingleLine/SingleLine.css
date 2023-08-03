@@ -1,0 +1,29 @@
+.lineContainer:hover{
+    color: green;
+    cursor:copy;
+}
+
+.lineContainer .LineNmberContainer:hover{
+    color: green;
+    cursor:copy;
+}
+
+.LineNmberContainer {
+    display: inline-block;
+    position: relative;  
+    color: rgb(26, 40, 32);
+    font-size: 1rem;
+    margin-right: 0.3rem;
+    margin-left: 2rem;
+
+  }
+  
+  .LineNmberContainer::after {
+    content: '\06DD';
+    position: absolute;
+    display: block;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

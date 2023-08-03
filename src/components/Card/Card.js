@@ -11,7 +11,6 @@ const Card = (props) => {
     isActive,
     metaData,
   } = { ...props };
-  // console.log(metaData);
   return (
     <div
       className={`cardContainer ${isActive == metaData.id ? 'isActive' : ''}`}
