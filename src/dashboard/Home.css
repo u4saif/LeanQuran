@@ -1,0 +1,46 @@
+.headerContainer {
+  grid-area: header;
+}
+.chaptersContainer {
+  /* grid-area: menu; */
+  /* grid-column: 1/2/14; */
+  /* max-width: max-content; */
+  grid-column: 1;
+  grid-row: 1;
+}
+.pageContainer {
+  grid-area: page;
+  /* grid-column: 2/14/14; */
+  /* width: calc(100vw - 18rem); */
+  height: 100vh;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20rem auto;
+  /* gap: 10px; */
+  background-color: #2196f3;
+}
+
+.chaptersContainer {
+  /* max-width: max-content; */
+  background-color: rgba(255, 237, 217, 0.916);
+  height: 100vh;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+}
+
+.chaptersContainer .heading {
+  display: flex;
+  justify-content: center;
+  padding: 0.3em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.pageContainer {
+  background-color: blanchedalmond;
+}

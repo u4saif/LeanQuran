@@ -1,0 +1,49 @@
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 20em; */
+  height: 5em;
+  margin: 0rem 0rem;
+  border-bottom: 1px dashed gray;
+}
+
+.cardContainer:hover {
+  background-color: rgb(138, 255, 183);
+  cursor: pointer;
+}
+
+.numberContainer {
+  display: inline-block;
+  position: relative;
+  margin: 1em;
+  margin-top: 0rem;
+  color: rgb(26, 40, 32);
+}
+
+.numberContainer::after {
+  content: '\06DD';
+  position: absolute;
+  display: block;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.headind {
+  display: block;
+  margin-right: 0.1em;
+}
+
+.subHeading > p,
+.headind > p {
+  font-size: 0.7rem;
+  margin-right: 0.9em;
+  color: rgb(100, 99, 98);
+}
+
+.isActive {
+  background-color: rgb(147, 253, 187);
+  color: green;
+}
