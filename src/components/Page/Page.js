@@ -36,7 +36,6 @@ const Page = (props) => {
         {pageLines &&
           pageLines.map((verse, index) => {
             const arabicIndex = engToArabNumber((index+1).toString());
-            console.log(arabicIndex);
             return (
               <SingleLine
                 key={index}

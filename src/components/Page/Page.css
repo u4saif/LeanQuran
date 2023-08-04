@@ -17,7 +17,7 @@
 }
 .pageHeaderContainer{
     text-align: center;
-    background-image: url(http://localhost:3000/static/media/surah-header.eb215d4bc00a1659dba3.svg);
+    background-image: url(../../assets/surah-header.svg);
     background-size: 100%;
     background-position: 50% 50%;
     width: 100%;
@@ -31,7 +31,7 @@
 }
 .bismillahContainer{
     text-align: center;
-    background-image: url(http://localhost:3000/static/media/bismilah.1b30ebf4927ae6c536c5.svg);
+    background-image: url(../../assets/bismilah.svg);
     background-size: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat, no-repeat;
