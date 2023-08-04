@@ -4,7 +4,7 @@ import { get } from "../../utilities/AppService";
 import SingleLine from "../SingleLine/SingleLine";
 const Page = (props) => {
   const [pageLines, setPageLines] = React.useState([]);
-  const { chapterId, metaData } = { ...props };
+  const { chapterId, metaData, updateFontSize } = { ...props };
   React.useEffect(() => {
     get(`quran/verses/imlaei?chapter_number=${chapterId}`).then((data) =>
       setPageLines(data.data.verses)
@@ -14,14 +14,18 @@ const Page = (props) => {
   const engToArabNumber = (num)=>{ 
       return num.replace(/\d/g, d =>  '٠١٢٣٤٥٦٧٨٩'[d])
     }
-
-  const lineStyleObj = {
+    
+  console.warn(updateFontSize);
+  let lineStyleObj = {
     direction: "rtl",
     // display: 'block',
     paddingTop: "0.5rem",
     paddingBottom: "0.5rem",
     fontSize: "2rem",
   };
+
+  lineStyleObj = {...lineStyleObj, fontSize: updateFontSize+'em'};
+  
   return (
     <>
       {/* https://api.quran.com/api/v4/quran/verses/imlaei?chapter_number=1 */}

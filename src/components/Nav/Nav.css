@@ -1,0 +1,20 @@
+.navContainer {
+  grid-column: 1/3;
+  grid-row: 1;
+  width: 100%;
+  height: 3rem;
+  background-color: 151311;
+  display: flex;
+  align-items: center;
+}
+
+.fontSizer {
+  color: white;
+  font-size: 12pt;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.sm {
+ font-size: 8pt;
+}
