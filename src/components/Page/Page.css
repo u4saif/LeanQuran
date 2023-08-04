@@ -1,8 +1,42 @@
 .allLineContainer {
-  padding-right: 0.5rem;
-  /* border-right: 0.1rem solid darkgreen;
-  border-left: 0.1rem solid darkgreen; */
+  padding-top: 1rem;
+  padding-right: 1rem;
   box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
   -moz-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
   -webkit-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
+}
+
+.pageHeaderContainer{
+  display: flex;
+  justify-content: center; 
+}
+
+.pageHeader{
+  font-size: 4rem;
+  color: rgb(128 0 53) ;
+}
+.pageHeaderContainer{
+    text-align: center;
+    background-image: url(http://localhost:3000/static/media/surah-header.eb215d4bc00a1659dba3.svg);
+    background-size: 100%;
+    background-position: 50% 50%;
+    width: 100%;
+    padding: 1.55%;
+}
+
+.parentBismillahContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bismillahContainer{
+    text-align: center;
+    background-image: url(http://localhost:3000/static/media/bismilah.1b30ebf4927ae6c536c5.svg);
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: right, left;
+    width: 250px;
+    height: 90px;
+    object-fit: cover;
 }

@@ -7,12 +7,17 @@ import { get } from '../utilities/AppService';
 const Home = () => {
   const [AllChapters, setAllChapters] = React.useState([]);
   const [openChapeter, setopenChapeter] = React.useState(1);
+  const [openChapeterInfo, setopenChapeterInfo] = React.useState(null);
   const clickHandler = (metaData) => {
     console.log('Clicked', metaData.id);
     setopenChapeter(metaData.id);
+    setopenChapeterInfo(metaData)
   };
   React.useEffect(() => {
-    get('chapters').then((data) => setAllChapters(data.data.chapters));
+    get('chapters').then((data) => {
+      setAllChapters(data.data.chapters)
+      setopenChapeterInfo(data.data.chapters[0])
+    });
   }, []);
 
   return (
@@ -35,7 +40,7 @@ const Home = () => {
         })}
       </div>
       <div className="pageContainer">
-        <Page chapterId={openChapeter} />
+        <Page chapterId={openChapeter} metaData={openChapeterInfo}/>
       </div>
     </div>
   );
