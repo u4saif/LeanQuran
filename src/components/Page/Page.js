@@ -10,14 +10,17 @@ const Page = (props) => {
       setPageLines(data.data.verses)
     );
   }, [chapterId]);
+ 
+  const engToArabNumber = (num)=>{ 
+      return num.replace(/\d/g, d =>  '٠١٢٣٤٥٦٧٨٩'[d])
+    }
 
-  console.log(metaData);
   const lineStyleObj = {
     direction: "rtl",
     // display: 'block',
     paddingTop: "0.5rem",
     paddingBottom: "0.5rem",
-    fontSize: "4.5rem",
+    fontSize: "2rem",
   };
   return (
     <>
@@ -32,10 +35,12 @@ const Page = (props) => {
       </div>
         {pageLines &&
           pageLines.map((verse, index) => {
+            const arabicIndex = engToArabNumber((index+1).toString());
+            console.log(arabicIndex);
             return (
               <SingleLine
                 key={index}
-                srNo={index + 1}
+                srNo={arabicIndex}
                 lineText={verse.text_imlaei}
                 lineStyle={lineStyleObj}
               />
