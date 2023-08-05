@@ -9,7 +9,13 @@ const Home = () => {
   const [AllChapters, setAllChapters] = React.useState([]);
   const [openChapeter, setopenChapeter] = React.useState(1);
   const [openChapeterInfo, setopenChapeterInfo] = React.useState(null);
-  const [pageFont, setPageFont] = React.useState(3);
+  const [pageStyle, setPageFont] = React.useState({
+    direction: "rtl",
+    display: "block",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+    fontSize: "3rem",
+  });
   const clickHandler = (metaData) => {
     setopenChapeter(metaData.id);
     setopenChapeterInfo(metaData);
@@ -22,21 +28,25 @@ const Home = () => {
   }, []);
 
   const navActionHandler = (value) => {
-    switch(value) {
-      case 'decrement':
-         let newSize = pageFont - 1;
-        setPageFont(newSize)
+    let currentFont = pageStyle.fontSize.split("rem")[0];
+    switch (value) {
+      case "decrement":
+        --currentFont;
+        setPageFont({ ...pageStyle, fontSize: currentFont + "rem" });
         break;
-      case 'increment':
-         let newSizee = pageFont + 1 ;
-         setPageFont(newSizee)
+      case "increment":
+        ++currentFont;
+        setPageFont({ ...pageStyle, fontSize: currentFont + "rem" });
+        break;
+      case "formatLines":
+        setPageFont({ ...pageStyle, display: (pageStyle.display == "block") ? "inline-block" : "block" });
         break;
     }
-  }
+  };
   return (
     <>
       <div className="grid-container">
-         <Nav actionHandler={navActionHandler}/>
+        <Nav actionHandler={navActionHandler} />
         <div className="chaptersContainer">
           <span className="heading">Surahs</span>
           {AllChapters.map((chapter) => {
@@ -55,7 +65,11 @@ const Home = () => {
           })}
         </div>
         <div className="pageContainer">
-          <Page chapterId={openChapeter} metaData={openChapeterInfo} updateFontSize={pageFont}/>
+          <Page
+            chapterId={openChapeter}
+            metaData={openChapeterInfo}
+            pageStyle={pageStyle}
+          />
         </div>
       </div>
     </>

@@ -18,3 +18,12 @@
 .sm {
  font-size: 8pt;
 }
+
+.btn span.icon {
+    background: url(https://api.iconify.design/fontisto:left-align.svg?color=%23888822) no-repeat;
+    float: right;
+    width: 20px;
+    height: 13px;
+    cursor: pointer;
+    margin: 7px;
+}
