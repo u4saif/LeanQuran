@@ -4,14 +4,17 @@ import Card from "../components/Card/Card";
 import Page from "../components/Page/Page";
 import Nav from "../components/Nav/Nav";
 import { get } from "../utilities/AppService";
-
+import { useDispatch } from "react-redux";
+import { store } from "../store/store";
+import { getChapters ,updateCurrentChapter } from "../store/features/chapters/chapetersSlice";
 const Home = () => {
+  const dispatch = useDispatch();
   const [AllChapters, setAllChapters] = React.useState([]);
   const [openChapeter, setopenChapeter] = React.useState(1);
   const [openChapeterInfo, setopenChapeterInfo] = React.useState(null);
   const [pageStyle, setPageFont] = React.useState({
     direction: "rtl",
-    display: "block",
+    display: "inline-block",
     paddingTop: "0.5rem",
     paddingBottom: "0.5rem",
     fontSize: "3rem",
@@ -19,12 +22,16 @@ const Home = () => {
   const clickHandler = (metaData) => {
     setopenChapeter(metaData.id);
     setopenChapeterInfo(metaData);
+    dispatch(updateCurrentChapter(metaData.id));
   };
   React.useEffect(() => {
     get("chapters").then((data) => {
       setAllChapters(data.data.chapters);
       setopenChapeterInfo(data.data.chapters[0]);
     });
+
+    dispatch(getChapters('chapters'));
+
   }, []);
 
   const navActionHandler = (value) => {
@@ -32,11 +39,11 @@ const Home = () => {
     switch (value) {
       case "decrement":
         --currentFont;
-        setPageFont({ ...pageStyle, fontSize: currentFont + "rem" });
+        (currentFont > 0) ? setPageFont({ ...pageStyle, fontSize: currentFont + "rem" }) : '';
         break;
       case "increment":
         ++currentFont;
-        setPageFont({ ...pageStyle, fontSize: currentFont + "rem" });
+        (currentFont < 9) ? setPageFont({ ...pageStyle, fontSize: currentFont + "rem" }) : '';
         break;
       case "formatLines":
         setPageFont({ ...pageStyle, display: (pageStyle.display == "block") ? "inline-block" : "block" });

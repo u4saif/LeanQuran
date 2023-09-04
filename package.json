@@ -1,15 +1,18 @@
 {
-  "name": "Learn Quran",
+  "name": "learn-quran",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "axios": "0.24.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^0.24.0",
     "debug": "^4.3.4",
     "events": "^3.3.0",
     "http": "^0.0.0",
     "https": "^1.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.1.2",
+    "redux": "^4.2.1",
     "zlib": "^1.0.5"
   },
   "scripts": {

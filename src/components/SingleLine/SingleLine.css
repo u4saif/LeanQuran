@@ -12,8 +12,8 @@
     display: inline-block;
     position: relative;  
     color: rgb(26, 40, 32);
-    font-size: 1.5rem;
-    margin-right: 0.3rem;
+    font-size: 1rem;
+    margin-right: 0.1rem;
     margin-left: 2rem;
 
   }
@@ -22,7 +22,7 @@
     content: '\06DD';
     position: absolute;
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

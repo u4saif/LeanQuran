@@ -1,9 +1,9 @@
 .allLineContainer {
   padding-top: 1rem;
   padding-right: 1rem;
-  box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
-  -moz-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
-  -webkit-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;
+/*  box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;*/
+/*  -moz-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;*/
+/*  -webkit-box-shadow: 6px 0 4px -4px #999, -6px 0 4px -4px #999;*/
 }
 
 .pageHeaderContainer{
