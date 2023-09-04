@@ -1,8 +1,14 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
+import Loader from "../Loader/Loader.js";
+
 import "./Page.css";
 import { get } from "../../utilities/AppService";
 import SingleLine from "../SingleLine/SingleLine";
+
 const Page = (props) => {
+  const { isLoading } = useSelector((store) => store.chapters);
+
   const [pageLines, setPageLines] = React.useState([]);
   const { chapterId, metaData, pageStyle } = { ...props };
   React.useEffect(() => {
@@ -26,6 +32,7 @@ const Page = (props) => {
         <div className="parentBismillahContainer">
           <div className="bismillahContainer"></div>
         </div>
+        { (isLoading) ?  <Loader/> : <>
         {pageLines &&
           pageLines.map((verse, index) => {
             const arabicIndex = engToArabNumber((index + 1).toString());
@@ -38,6 +45,8 @@ const Page = (props) => {
               />
             );
           })}
+        </>
+        }
       </div>
     </>
   );
